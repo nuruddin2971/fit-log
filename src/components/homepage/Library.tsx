@@ -2,16 +2,12 @@ import { TCard } from "@/types/card.type";
 import Image from "next/image";
 import React from "react";
 import LibraryCard from "../shared/LibraryCard";
+import { getAllData } from "@/lib/card";
 
-const getAllData = async () => {
-  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
-  const data = await res.json();
-  return data;
-};
 
 const Library = async () => {
   const data = await getAllData();
-  console.log(data, "data");
+  // console.log(data, "data");
   return (
     <div className="w-10/12 mx-auto my-10 border-2">
       <div className="my-8">

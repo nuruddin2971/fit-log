@@ -1,5 +1,8 @@
+"use client";
 import { TCard } from "@/types/card.type";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 import React from "react";
 import { AiOutlineFire } from "react-icons/ai";
 import { FaClock } from "react-icons/fa";
@@ -7,12 +10,19 @@ import { FaRegStar } from "react-icons/fa6";
 
 type TCardProps = {
   card: TCard;
-  ind?: number; // Added ind as optional prop if needed, but not used within this layout
+  ind?: number; 
 };
 
 const LibraryCard = ({ card }: TCardProps) => {
+  const router = useRouter();
+  const handleNavigate = (id: number) => {
+    router.push(`/workouts/${id}`);
+  };
   return (
-    <div className="card w-full bg-[#1a1a1e] rounded-[10px] overflow-hidden shadow-lg">
+    <div
+      onClick={() => handleNavigate(card.id)}
+      className="card w-full bg-[#1a1a1e] rounded-[10px] overflow-hidden shadow-lg"
+    >
       {" "}
       {/* Container card */}
       <div className="relative aspect-[16/10]">

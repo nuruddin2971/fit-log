@@ -9,16 +9,13 @@ const Navbar = () => {
       <nav className="w-10/12 mx-auto flex justify-between items-center py-4 border-2">
         <h2 className="flex items-center gap-2 font-bold text-xl">
           <span>
-            <Image src={logo} alt="fit log logo" width={20} height={20}></Image>
+            <Image src={logo} alt="fit log logo" width={20} height={20} />
           </span>{" "}
           FITLOG
         </h2>
         <ul className="flex items-center gap-4">
           <li>
-            <Link
-              href="/"
-              className="font-semibold hover:text-lime-500"
-            >
+            <Link href="/" className="font-semibold hover:text-lime-500">
               Workouts
             </Link>
           </li>
