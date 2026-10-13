@@ -129,7 +129,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="btn bg-[#b5e742] hover:bg-[#a2d435] text-[#1a1a1e] border-none font-bold flex-1 rounded-xl">
+            <button className="btn bg-[#b5e742] hover:bg-[#a2d435] text-[#1a1a1e] border-none font-bold px-6 rounded-xl">
               <FaCalendarPlus className="text-lg" /> Add to today's plan
             </button>
             <button className="btn bg-[#1a1a1e] hover:bg-[#25252b] text-white border border-white/10 font-medium px-6 rounded-xl">

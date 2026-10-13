@@ -9,7 +9,7 @@ const Library = async () => {
   const data = await getAllData();
   // console.log(data, "data");
   return (
-    <div className="w-10/12 mx-auto my-10 border-2">
+    <div className="w-10/12 mx-auto my-10">
       <div className="my-8">
         <h2 className="font-bold text-3xl">THE LIBRARY</h2>
         <p className="text-[#9CA3AF]">

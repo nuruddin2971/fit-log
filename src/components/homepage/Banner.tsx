@@ -5,7 +5,7 @@ import banner from "@/assets/banner.png";
 const Banner = () => {
   return (
     <div className="my-10">
-      <div className="w-10/12 mx-auto flex justify-between items-center border-2 p-14">
+      <div className="w-10/12 mx-auto flex justify-between items-center bg-[#15171D] rounded-2xl p-14">
         <div className="space-y-4">
           <p className="font-bold text-[#C2F800]">WORKOUT LIBRARY</p>
           <h2 className="font-extrabold text-6xl">
