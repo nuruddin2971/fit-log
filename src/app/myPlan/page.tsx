@@ -3,8 +3,8 @@ import { CardContext } from "@/context/CardContext";
 import React, { useContext } from "react";
 
 const MyPlanePage = () => {
-  const { todayPlan } = useContext(CardContext);
-  console.log(todayPlan, "todayPlan");
+  const { todayPlan, savedItems } = useContext(CardContext);
+  console.log(todayPlan, savedItems, "todayPlan", "savedItems");
   return <div>Installation</div>;
 };
 

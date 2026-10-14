@@ -1,3 +1,4 @@
+import SavedItemsBtn from "@/components/cardDetails/SavedItemsBtn";
 import TodayPlanBtn from "@/components/cardDetails/TodayPlanBtn";
 import { getAllData } from "@/lib/card";
 import { TCard } from "@/types/card.type";
@@ -129,9 +130,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
             <TodayPlanBtn card={card}></TodayPlanBtn>
-            <button className="btn bg-[#1a1a1e] hover:bg-[#25252b] text-white border border-white/10 font-medium px-6 rounded-xl">
-              <FaRegBookmark /> Save for later
-            </button>
+            <SavedItemsBtn card={card}></SavedItemsBtn>
           </div>
         </div>
       </div>
