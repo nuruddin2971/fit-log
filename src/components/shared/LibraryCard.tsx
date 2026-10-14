@@ -10,7 +10,7 @@ import { FaRegStar } from "react-icons/fa6";
 
 type TCardProps = {
   card: TCard;
-  ind?: number; 
+  ind?: number;
 };
 
 const LibraryCard = ({ card }: TCardProps) => {
@@ -21,7 +21,7 @@ const LibraryCard = ({ card }: TCardProps) => {
   return (
     <div
       onClick={() => handleNavigate(card.id)}
-      className="card w-full bg-[#1a1a1e] rounded-[10px] overflow-hidden shadow-lg"
+      className="card w-full bg-[#1a1a1e] rounded-[10px] overflow-hidden shadow-lg cursor-pointer border border-transparent hover:border-[#b5e742] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
     >
       {" "}
       {/* Container card */}

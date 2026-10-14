@@ -1,10 +1,9 @@
+import TodayPlanBtn from "@/components/cardDetails/TodayPlanBtn";
 import { getAllData } from "@/lib/card";
 import { TCard } from "@/types/card.type";
 import Image from "next/image";
 import React from "react";
-import { AiOutlineFire } from "react-icons/ai";
 import { FaCalendarPlus, FaRegBookmark, FaRegStar } from "react-icons/fa";
-import { FaClock } from "react-icons/fa6";
 
 type TCardDetailsProps = {
   params: {
@@ -129,9 +128,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="btn bg-[#b5e742] hover:bg-[#a2d435] text-[#1a1a1e] border-none font-bold px-6 rounded-xl">
-              <FaCalendarPlus className="text-lg" /> Add to today's plan
-            </button>
+            <TodayPlanBtn card={card}></TodayPlanBtn>
             <button className="btn bg-[#1a1a1e] hover:bg-[#25252b] text-white border border-white/10 font-medium px-6 rounded-xl">
               <FaRegBookmark /> Save for later
             </button>
