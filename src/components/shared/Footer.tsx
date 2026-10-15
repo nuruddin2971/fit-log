@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div>
       <hr className="border-neutral-content opacity-10" />
-      <div className="w-10/12 mx-auto p-4">
-        <div className="flex justify-between">
+      <div className="w-11/12 sm:w-10/12 mx-auto p-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
           <h2 className="flex items-center gap-2 font-bold">
             <span className="-rotate-45">
               <Image src={logo} alt="fit log logo" width={20} height={20} />

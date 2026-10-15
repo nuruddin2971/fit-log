@@ -4,7 +4,7 @@ import { getAllData } from "@/lib/card";
 import { TCard } from "@/types/card.type";
 import Image from "next/image";
 import React from "react";
-import { FaCalendarPlus, FaRegBookmark, FaRegStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 type TCardDetailsProps = {
   params: {
@@ -29,7 +29,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
   return (
     <div className="w-10/12 mx-auto my-12 text-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left Column: Big Image */}
+
         <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-xl bg-[#1a1a1e]">
           <Image
             src={card.image}
@@ -40,9 +40,9 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
           />
         </div>
 
-        {/* Right Column: Details & Specs */}
+       
         <div className="flex flex-col space-y-6">
-          {/* Title & Description */}
+       
           <div>
             <h1 className="text-3xl lg:text-4xl font-extrabold uppercase tracking-wide">
               {card.name}
@@ -52,7 +52,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
             </p>
           </div>
 
-          {/* Muscle Groups Badges */}
+  
           <div className="flex flex-wrap gap-2">
             {card.muscleGroups.map((group: string, index: number) => (
               <span
@@ -64,7 +64,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
             ))}
           </div>
 
-          {/* Specs Table / List */}
+
           <div className="bg-[#1a1a1e] rounded-xl p-2 divide-y divide-white/5">
             <div className="flex justify-between items-center px-4 py-3 text-sm">
               <span className="text-[#9CA3AF] uppercase text-xs font-semibold tracking-wider">
@@ -112,7 +112,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
             </div>
           </div>
 
-          {/* Instructions Section */}
+  
           <div className="space-y-3 pt-2">
             <h3 className="font-bold text-sm tracking-wider uppercase text-white">
               Instructions
@@ -127,7 +127,7 @@ const CardDetailsPage = async ({ params }: TCardDetailsProps) => {
             </ol>
           </div>
 
-          {/* Action Buttons */}
+
           <div className="flex flex-wrap gap-4 pt-4">
             <TodayPlanBtn card={card}></TodayPlanBtn>
             <SavedItemsBtn card={card}></SavedItemsBtn>

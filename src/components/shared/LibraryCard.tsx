@@ -23,11 +23,7 @@ const LibraryCard = ({ card }: TCardProps) => {
       onClick={() => handleNavigate(card.id)}
       className="card w-full bg-[#1a1a1e] rounded-[10px] overflow-hidden shadow-lg cursor-pointer border border-transparent hover:border-[#b5e742] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
     >
-      {" "}
-      {/* Container card */}
       <div className="relative aspect-[16/10]">
-        {" "}
-        {/* Aspect ratio container */}
         <Image
           src={card.image}
           alt={card.name}
@@ -37,11 +33,7 @@ const LibraryCard = ({ card }: TCardProps) => {
         />
       </div>
       <div className="card-body mt-4 p-4 space-y-4">
-        {" "}
-        {/* Content area */}
         <div className="card-actions flex flex-wrap gap-1">
-          {" "}
-          {/* Tags */}
           {card.muscleGroups.map((group, index) => (
             <span
               key={index}
@@ -61,8 +53,6 @@ const LibraryCard = ({ card }: TCardProps) => {
         </div>
         <hr className="border-neutral-content opacity-10" />
         <div className="flex justify-between items-center text-neutral-content opacity-70 pt-2 text-sm">
-          {" "}
-          {/* Stats footer */}
           <span className="flex items-center gap-2">
             <FaClock className="text-sm" /> {card.duration} min
           </span>

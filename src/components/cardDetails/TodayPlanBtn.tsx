@@ -3,15 +3,20 @@ import { CardContext } from "@/context/CardContext";
 import { TCard } from "@/types/card.type";
 import React, { useContext } from "react";
 import { FaCalendarPlus } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const TodayPlanBtn = ({ card }: { card: TCard }) => {
   const { todayPlan, setTodayPlan } = useContext(CardContext);
 
   const handleTodayPlanBtn = () => {
-    console.log("handleTodayPlan", card);
+    const isAlreadyAdded = todayPlan.some((item: TCard) => item.id === card.id);
+    if (isAlreadyAdded) {
+      toast.error("Already in your plan!");
+      return;
+    }
 
     setTodayPlan([...todayPlan, card]);
-    alert(`You have added "${card.name}"`);
+    toast.success(`You have added "${card.name}"`);
   };
   return (
     <div>
