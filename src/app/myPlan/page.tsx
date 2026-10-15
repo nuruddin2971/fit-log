@@ -8,6 +8,7 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { AiOutlineFire } from "react-icons/ai";
 import { FaCheck, FaClock, FaRegStar } from "react-icons/fa";
+import { GiCheckMark } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
 const MyPlanPage = () => {
@@ -193,6 +194,16 @@ const MyPlanPage = () => {
                           View Details
                         </button>
                       </Link>
+
+                      <button
+                        onClick={() => handleRemoveFromTodayPlan(card.id)}
+                        className="btn btn-sm bg-[#C2F800] hover:bg-[#000000] text-white border-white/10 rounded-xl font-medium px-4"
+                      >
+                        <span>
+                          <GiCheckMark />
+                        </span>
+                        Mark as Done
+                      </button>
 
                       <button
                         onClick={() => handleRemoveFromTodayPlan(card.id)}
