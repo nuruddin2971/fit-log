@@ -1,5 +1,5 @@
 "use client";
-import LibraryCard from "@/components/shared/LibraryCard";
+
 import { CardContext } from "@/context/CardContext";
 import { TCard } from "@/types/card.type";
 import Image from "next/image";
@@ -7,17 +7,34 @@ import Link from "next/link";
 
 import React, { useContext, useState } from "react";
 import { AiOutlineFire } from "react-icons/ai";
-import { FaCheck, FaClock, FaRegStar } from "react-icons/fa";
+import { FaClock, FaRegStar } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify";
 
 const MyPlanPage = () => {
   const {
     todayPlan,
     savedItems,
-    handleRemoveFromTodayPlan,
-    handleRemoveFromSaved,
+    // handleRemoveFromTodayPlan,
+    // handleRemoveFromSaved,
+    setTodayPlan,
+    setSavedItems
   } = useContext(CardContext);
+
+  const handleRemoveFromTodayPlan = (id: number) => {
+    setTodayPlan((prev: TCard[]) =>
+      prev.filter((item: TCard) => item.id !== id),
+    );
+    toast.error("Removed from plan!");
+  };
+
+  const handleRemoveFromSaved = (id: number) => {
+    setSavedItems((prev: TCard[]) =>
+      prev.filter((item: TCard) => item.id !== id),
+    );
+    toast.error("Removed from saved!");
+  };
 
   const [sortBy, setSortBy] = useState<"duration" | "calories" | "rating">(
     "duration",
@@ -38,9 +55,6 @@ const MyPlanPage = () => {
 
   const sortedTodayPlan = sortCards(todayPlan);
   const sortedSavedItems = sortCards(savedItems);
-
-  // console.log(sortedTodayPlan, "sortedTodayPlan");
-  // console.log(sortedSavedItems, "sortedSavedItems");
 
   const [isSaved, setIsSaved] = useState(false);
 
@@ -222,6 +236,11 @@ const MyPlanPage = () => {
                   <p className="text-[#9CA3AF] text-sm">
                     Browse the library and add a lift to get today moving.
                   </p>
+                  <Link href="/">
+                    <button className="btn btn-sm bg-[#ccff00] hover:bg-[#b5e742] text-[#121215] font-bold border-none rounded-xl px-6 py-2 transition cursor-pointer mt-2">
+                      Go to workouts
+                    </button>
+                  </Link>
                 </div>
               )}
             </div>
@@ -294,6 +313,11 @@ const MyPlanPage = () => {
                   <p className="text-[#9CA3AF] text-sm">
                     Browse the library and add a lift to get today moving.
                   </p>
+                  <Link href="/">
+                    <button className="btn btn-sm bg-[#ccff00] hover:bg-[#b5e742] text-[#121215] font-bold border-none rounded-xl px-6 py-2 transition cursor-pointer mt-2">
+                      Go to workouts
+                    </button>
+                  </Link>
                 </div>
               )}
             </div>
