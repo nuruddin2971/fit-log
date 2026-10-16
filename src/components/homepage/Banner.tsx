@@ -10,7 +10,7 @@ const Banner = () => {
           <p className="font-bold text-[#C2F800] text-sm sm:text-base">
             WORKOUT LIBRARY
           </p>
-          <h2 className="font-extrabold text-3xl sm:text-4xl lg:text-6xl leading-tight">
+          <h2 className="font-extrabold text-3xl text-[#ffffff] sm:text-4xl lg:text-6xl leading-tight">
             TRAIN WITH INTENT. LOG EVERY SET.
           </h2>
           <p className="text-[#9CA3AF] text-sm sm:text-base">
