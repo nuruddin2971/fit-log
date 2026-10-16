@@ -6,9 +6,13 @@ import { FaCalendarPlus, FaRegBookmark } from "react-icons/fa";
 import { CardContext } from "@/context/CardContext";
 import { useContext } from "react";
 import { usePathname } from "next/navigation";
+import { TCard } from "@/types/card.type";
 
 const Navbar = () => {
-  const { todayPlan, savedItems } = useContext(CardContext);
+  const { todayPlan, savedItems } = useContext(CardContext) as {
+    todayPlan: TCard[];
+    savedItems: TCard[];
+  };
   const pathname = usePathname();
 
   return (

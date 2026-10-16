@@ -5,12 +5,21 @@ import { TCard } from "@/types/card.type";
 import Image from "next/image";
 import Link from "next/link";
 
-import React, { useContext, useState } from "react";
+import React, { Dispatch, SetStateAction, useContext, useState } from "react";
 import { AiOutlineFire } from "react-icons/ai";
 import { FaClock, FaRegStar } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify";
+
+type TCardContextType = {
+  todayPlan: TCard[];
+  setTodayPlan: Dispatch<SetStateAction<TCard[]>>;
+  savedItems: TCard[];
+  setSavedItems: Dispatch<SetStateAction<TCard[]>>;
+  // handleRemoveFromTodayPlan: (id: number | string) => void;
+  // handleRemoveFromSaved: (id: number | string) => void;
+};
 
 const MyPlanPage = () => {
   const {
@@ -19,8 +28,8 @@ const MyPlanPage = () => {
     // handleRemoveFromTodayPlan,
     // handleRemoveFromSaved,
     setTodayPlan,
-    setSavedItems
-  } = useContext(CardContext);
+    setSavedItems,
+  } = useContext(CardContext) as TCardContextType;
 
   const handleRemoveFromTodayPlan = (id: number) => {
     setTodayPlan((prev: TCard[]) =>

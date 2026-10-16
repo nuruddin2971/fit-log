@@ -5,9 +5,15 @@ import React, { useContext } from "react";
 import { FaCalendarPlus, FaRegBookmark } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const SavedItemsBtn = ({ card }: { card: TCard }) => {
-  const { savedItems, setSavedItems } = useContext(CardContext);
+interface SavedItemsBtnProps {
+  card: TCard;
+}
 
+const SavedItemsBtn = ({ card }: SavedItemsBtnProps) => {
+  const { savedItems, setSavedItems } = useContext(CardContext) as {
+    savedItems: TCard[];
+    setSavedItems: React.Dispatch<React.SetStateAction<TCard[]>>;
+  }
   const handleSavedItemsBtn = () => {
     const isAlreadyAdded = savedItems.some(
       (item: TCard) => item.id === card.id,
@@ -18,7 +24,7 @@ const SavedItemsBtn = ({ card }: { card: TCard }) => {
     }
 
     setSavedItems([...savedItems, card]);
-    toast.success(`You have added "${card.name} to your SavedItems"`);
+    toast.success(`You have added "${card.name}" to your SavedItems`);
   };
   return (
     <div>

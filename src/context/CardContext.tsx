@@ -1,6 +1,12 @@
 "use client";
 import { TCard } from "@/types/card.type";
-import React, { createContext, ReactNode, useState } from "react";
+import React, {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 
 export const CardContext = createContext({});
 

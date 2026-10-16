@@ -5,8 +5,15 @@ import React, { useContext } from "react";
 import { FaCalendarPlus } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const TodayPlanBtn = ({ card }: { card: TCard }) => {
-  const { todayPlan, setTodayPlan } = useContext(CardContext);
+interface SavedItemsBtnProps {
+  card: TCard;
+}
+
+const TodayPlanBtn = ({ card }: SavedItemsBtnProps) => {
+  const { todayPlan, setTodayPlan } = useContext(CardContext) as {
+    todayPlan: TCard[];
+    setTodayPlan: React.Dispatch<React.SetStateAction<TCard[]>>;
+  };
 
   const handleTodayPlanBtn = () => {
     const isAlreadyAdded = todayPlan.some((item: TCard) => item.id === card.id);
